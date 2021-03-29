@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AppConfiguration: String {
+enum AppConfiguration: String, CaseIterable {
     
     case urlOne = "https://swapi.dev/api/films/1/"
     case urlTwo = "https://swapi.dev/api/films/2/"
