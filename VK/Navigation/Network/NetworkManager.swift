@@ -20,8 +20,7 @@ struct NetworkManager {
     
     static let session = URLSession.shared
     
-    static func dataTask(
-        url: URL, completion: @escaping (String?) -> Void) {
+    static func dataTask(url: URL, completion: @escaping (String?) -> Void) {
         
         session.dataTask(with: url) { data, response, error in
             
@@ -39,5 +38,45 @@ struct NetworkManager {
                 completion(String(data: data, encoding: .utf8))
             }
         }.resume()
+    }
+}
+
+class DataLoader {
+    
+   static func loadDataWithSerialization(url: URL, callback: @escaping (User) -> Void) {
+        
+        NetworkManager.dataTask(url: url) { string in
+
+            guard let string = string else {return}
+            let data = Data(string.utf8)
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    guard let user = User(json: json) else {return}
+                    callback(user)
+                }
+                
+                } catch let error as NSError {
+                    print("Failed to load: \(error.localizedDescription)")
+                }
+        }
+    }
+    
+    static func loadDataWithDecode(url: URL, callback: @escaping (Planet) -> Void) {
+        
+        NetworkManager.dataTask(url: url) { string in
+        
+            guard let string = string else {return}
+            let data = Data(string.utf8)
+        
+            do {
+                let planet = try JSONDecoder().decode(Planet.self, from: data)
+                callback(planet)
+            
+            } catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
+            }
+            
+        }
     }
 }

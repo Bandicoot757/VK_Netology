@@ -9,6 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let mainCoordinator = MainCoordinator(navigationController: UINavigationController())
