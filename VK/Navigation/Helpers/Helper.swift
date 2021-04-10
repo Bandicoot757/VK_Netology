@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: class {
+    
+    func сheckLogin(login: String) -> Bool
+    func checkPassword(password: String) -> Bool
+
+}
+
 extension UIImage {
     func alpha(_ value:CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
