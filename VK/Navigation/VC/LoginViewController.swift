@@ -11,11 +11,13 @@ import UIKit
 class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     weak var coordinator: MainCoordinator?
+    var delegate: LoginViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .white
+        self.delegate = Auth()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -112,8 +114,27 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func loginButtonTapped() {
         
-        coordinator?.openProfile()
+        guard let login = loginTextField.text, !login.isEmpty else {
+            
+            let alert = UIAlertController(title: "Ошибка входа", message: "Введите логин", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Назад", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        
+            return
+        }
+        
+        guard let password = passwordTextField.text, !password.isEmpty  else {
+            
+            let alert = UIAlertController(title: "Ошибка входа", message: "Введите пароль", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Назад", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        
+            return
+        }
 
+        tabBarItem.isEnabled = false // Временное решение
+        
+        delegate?.сheckCredentials(login: login, password: password, vc: ProfileViewController())
     }
     
     override func viewWillLayoutSubviews() {

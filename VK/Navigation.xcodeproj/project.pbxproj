@@ -31,7 +31,7 @@
 		36A8F4EB25D1B98C0099EB19 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F4EA25D1B98C0099EB19 /* Coordinator.swift */; };
 		36A8F4F325D1C61A0099EB19 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F4F225D1C61A0099EB19 /* MainCoordinator.swift */; };
 		36D74ADD2621A820003953CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36D74ADC2621A820003953CD /* GoogleService-Info.plist */; };
-		36D74AE12621B5D6003953CD /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D74AE02621B5D6003953CD /* Checker.swift */; };
+		36D74AE52621BF68003953CD /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D74AE42621BF68003953CD /* Auth.swift */; };
 		36E58F52253C7CB00057A390 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E58F51253C7CB00057A390 /* PhotosViewController.swift */; };
 		36E58F58253CA0620057A390 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E58F57253CA0620057A390 /* Photo.swift */; };
 		36E58F5B253CA2EC0057A390 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E58F5A253CA2EC0057A390 /* PhotosCollectionViewCell.swift */; };
@@ -65,7 +65,7 @@
 		36A8F4EA25D1B98C0099EB19 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		36A8F4F225D1C61A0099EB19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		36D74ADC2621A820003953CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		36D74AE02621B5D6003953CD /* Checker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Checker.swift; path = "../../../../Промышленная разработка/HW_patterns/CollectionView/Navigation/Checker.swift"; sourceTree = "<group>"; };
+		36D74AE42621BF68003953CD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		36E58F51253C7CB00057A390 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		36E58F57253CA0620057A390 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		36E58F5A253CA2EC0057A390 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -116,7 +116,6 @@
 				366F3BD6253581F300FAE88A /* Cells */,
 				366F3BD82535844900FAE88A /* Helpers */,
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
-				36D74AE02621B5D6003953CD /* Checker.swift */,
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
 				060782BF250CE27A00A87020 /* Info.plist */,
@@ -128,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				36D74ADC2621A820003953CD /* GoogleService-Info.plist */,
+				36D74AE42621BF68003953CD /* Auth.swift */,
 				365B3E4E25FF760D00B33E33 /* NetworkManager.swift */,
 			);
 			path = Network;
@@ -341,13 +341,13 @@
 				36916255253416E000B65B33 /* PostTableViewCell.swift in Sources */,
 				368EC808261C56DE00ACF47C /* Planet.swift in Sources */,
 				367324D025E992990097683D /* PhotosCoordinator.swift in Sources */,
+				36D74AE52621BF68003953CD /* Auth.swift in Sources */,
 				365B3E4F25FF760D00B33E33 /* NetworkManager.swift in Sources */,
 				3676B4472532F9EA002156EC /* LoginViewController.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
 				060782C6250CEB0A00A87020 /* InfoViewController.swift in Sources */,
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
-				36D74AE12621B5D6003953CD /* Checker.swift in Sources */,
 				365C37EB251F5F95002FB751 /* ProfileHeaderView.swift in Sources */,
 				369162522534106000B65B33 /* DataSource.swift in Sources */,
 				36E58F58253CA0620057A390 /* Photo.swift in Sources */,
