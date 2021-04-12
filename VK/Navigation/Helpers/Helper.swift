@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: class {
+    func сheckCredentials(login: String, password: String, vc: UIViewController)
+}
+
 extension UIImage {
     func alpha(_ value:CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
@@ -65,4 +69,25 @@ extension UIView {
             self.addSubview($0)
         }
     }
+}
+
+extension UIApplication {
+    
+    static func topViewController(base: UIViewController? = UIApplication.shared.delegate?.window??.rootViewController) -> UIViewController? {
+        
+            if let nav = base as? UINavigationController {
+                return topViewController(base: nav.visibleViewController)
+            }
+        
+            if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return topViewController(base: selected)
+            }
+        
+            if let presented = base?.presentedViewController {
+                return topViewController(base: presented)
+            }
+
+            return base
+        }
+    
 }

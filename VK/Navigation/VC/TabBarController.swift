@@ -23,7 +23,7 @@ class TabBarController: UITabBarController {
 
         NetworkManager.dataTask(url: url) { string in
             guard let data = string else {return}
-                print(data)
+//                print(data)
         }
         
         mainCoordinator.start()
